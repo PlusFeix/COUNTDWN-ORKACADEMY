@@ -231,6 +231,7 @@
     let ticking=!1,mouseX=0,mouseY=0;document.addEventListener("mousemove",e=>{mouseX=e.clientX,mouseY=e.clientY,ticking||(requestAnimationFrame(updateParallax),ticking=!0)});function updateParallax(){const e=window.innerWidth/2,t=window.innerHeight/2,o=(mouseX-e)/e,n=(mouseY-t)/t;hero.style.setProperty("--bg-x",`${20*o}px`),hero.style.setProperty("--bg-y",`${20*n}px`),crocContainer.style.transform=`translate(${30*o}px, ${30*n}px)`,document.querySelector(".main-title").style.transform=`translate(${-10*o}px, ${-10*n}px)`,ticking=!1}const style=document.createElement("style");style.textContent=".hero::before { transform: translate(var(--bg-x, 0), var(--bg-y, 0)); }",document.head.appendChild(style);const form=document.getElementById("waitlistForm"),success=document.getElementById("success");form.addEventListener("submit",async e=>{e.preventDefault(),form.querySelector(".hp").value||(form.name.value.trim()&&/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email.value.trim())&&document.getElementById("gdpr").checked?(success.style.display="block",form.style.display="none",setTimeout(()=>{closeModal(),setTimeout(()=>{form.reset(),form.style.display="block",success.style.display="none"},500)},3e3)):alert("⚠️ Controlla i campi: nome, email valida e consenso privacy."))});(function(){const e=new URLSearchParams(location.search),t=Array.from(e.entries()).map(([e,t])=>`${e}=${t}`).join("&"),o=document.getElementById("utmField");o&&(o.value=t)})();
   </script>
 </body>
-</html>```
+</html>
+
 
 
